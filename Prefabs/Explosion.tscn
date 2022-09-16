@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Explosion.gd" type="Script" id=1]
+
+[node name="Explosion" type="CPUParticles2D"]
+position = Vector2( -0.267685, 0.817673 )
+scale = Vector2( 1.00847, 1.03941 )
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.49
+randomness = 0.64
+lifetime_randomness = 0.3
+fixed_fps = 5
+emission_shape = 1
+emission_sphere_radius = 18.68
+gravity = Vector2( 0, 40 )
+angle_random = 0.35
+scale_amount = 2.0
+scale_amount_random = 0.41
+color = Color( 0.803922, 0.980392, 0.317647, 0.364706 )
+hue_variation = 0.13
+hue_variation_random = 0.24
+script = ExtResource( 1 )

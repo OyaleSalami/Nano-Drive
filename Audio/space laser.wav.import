@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/space laser.wav-7d000a5f71d384d16013e20b66712510.sample"
+
+[deps]
+
+source_file="res://Audio/space laser.wav"
+dest_files=[ "res://.import/space laser.wav-7d000a5f71d384d16013e20b66712510.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

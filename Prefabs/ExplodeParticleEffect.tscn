@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="ExplodeParticleEffect" type="CPUParticles2D"]
+position = Vector2( 16.7982, 261.994 )
+emitting = false
+amount = 500
+one_shot = true
+explosiveness = 0.3
+randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 50.0
+gravity = Vector2( 5, 0 )
+scale_amount = 1.5
+color = Color( 0.4, 0.866667, 0.988235, 1 )

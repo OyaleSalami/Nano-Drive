@@ -1,0 +1,280 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Sprites/SpaceShipExtraLarge_0.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Prefabs/RocksPrefab.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://UI.gd" type="Script" id=5]
+[ext_resource path="res://Audio/space laser.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/engine3.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/space rock.ogg" type="AudioStream" id=164]
+[ext_resource path="res://Scripts/VerticalStation.gd" type="Script" id=166]
+[ext_resource path="res://Sprites/ft5.png" type="Texture" id=167]
+[ext_resource path="res://Sprites/ft2.png" type="Texture" id=168]
+[ext_resource path="res://Sprites/ft3.png" type="Texture" id=169]
+[ext_resource path="res://Sprites/ft4.png" type="Texture" id=170]
+[ext_resource path="res://Sprites/ft1.png" type="Texture" id=171]
+[ext_resource path="res://Sprites/dg5.png" type="Texture" id=172]
+[ext_resource path="res://Sprites/dg6.png" type="Texture" id=173]
+[ext_resource path="res://Sprites/dg1.png" type="Texture" id=174]
+[ext_resource path="res://Sprites/dg2.png" type="Texture" id=175]
+[ext_resource path="res://Sprites/dg3.png" type="Texture" id=176]
+[ext_resource path="res://Sprites/dg4.png" type="Texture" id=177]
+[ext_resource path="res://Scripts/HorizontalStation.gd" type="Script" id=178]
+[ext_resource path="res://Scripts/RockThrower.gd" type="Script" id=179]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 171 ), ExtResource( 168 ), ExtResource( 169 ), ExtResource( 170 ), ExtResource( 167 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 174 ), ExtResource( 175 ), ExtResource( 176 ), ExtResource( 177 ), ExtResource( 172 ), ExtResource( 173 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.5
+} ]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.286275, 0.407843, 0.454902, 1 )
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+shadow_color = Color( 0.270588, 0.290196, 0.301961, 0.266667 )
+shadow_size = 1
+shadow_offset = Vector2( 2, 0 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Space" type="Node2D"]
+
+[node name="ExplodeParticleEffect" type="CPUParticles2D" parent="."]
+position = Vector2( 16.0002, 95.9999 )
+emitting = false
+amount = 500
+one_shot = true
+explosiveness = 0.3
+randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 50.0
+gravity = Vector2( 5, 0 )
+scale_amount = 1.5
+color = Color( 0.4, 0.866667, 0.988235, 1 )
+
+[node name="ExplodeParticleEffect2" type="CPUParticles2D" parent="."]
+position = Vector2( 16.0002, 95.9999 )
+emitting = false
+amount = 500
+one_shot = true
+explosiveness = 0.3
+randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 50.0
+gravity = Vector2( 5, 0 )
+scale_amount = 1.5
+color = Color( 0.4, 0.866667, 0.988235, 1 )
+
+[node name="Bounds" type="Node2D" parent="."]
+position = Vector2( 1100.26, 274.357 )
+rotation = 1.5708
+
+[node name="Floor" type="StaticBody2D" parent="Bounds"]
+position = Vector2( 627.761, 595.04 )
+rotation = -1.5708
+collision_layer = 48
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Floor"]
+scale = Vector2( 100, 1 )
+shape = SubResource( 1 )
+
+[node name="Top" type="StaticBody2D" parent="Bounds"]
+position = Vector2( -1328.83, 609.144 )
+rotation = -1.5708
+collision_layer = 48
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Top"]
+scale = Vector2( 100, 1 )
+shape = SubResource( 1 )
+
+[node name="Left" type="StaticBody2D" parent="Bounds"]
+position = Vector2( -345.319, 1615.28 )
+collision_layer = 48
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Left"]
+scale = Vector2( 100, 1 )
+shape = SubResource( 1 )
+
+[node name="Right" type="StaticBody2D" parent="Bounds"]
+position = Vector2( -341.464, -392.117 )
+collision_layer = 48
+collision_mask = 48
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/Right"]
+scale = Vector2( 100, 1 )
+shape = SubResource( 1 )
+
+[node name="Background Audio" type="AudioStreamPlayer" parent="Bounds"]
+stream = ExtResource( 164 )
+autoplay = true
+mix_target = 1
+
+[node name="StationVert" type="AnimatedSprite" parent="Bounds"]
+position = Vector2( -44.7328, 1099.44 )
+z_index = -2
+frames = SubResource( 2 )
+frame = 1
+script = ExtResource( 166 )
+
+[node name="StationHorizon" type="AnimatedSprite" parent="Bounds"]
+position = Vector2( -663.437, 580.336 )
+z_index = -4
+frames = SubResource( 3 )
+script = ExtResource( 178 )
+
+[node name="StationHorizon2" type="AnimatedSprite" parent="Bounds"]
+position = Vector2( -254.351, 271.141 )
+scale = Vector2( 0.3, 0.3 )
+z_index = -4
+frames = SubResource( 3 )
+frame = 3
+script = ExtResource( 178 )
+speed = 30
+
+[node name="Explosion Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.457
+pitch_scale = 0.32
+
+[node name="Ship" type="KinematicBody2D" parent="."]
+position = Vector2( 505.03, 496.868 )
+scale = Vector2( 0.2, 0.2 )
+collision_layer = 17
+collision_mask = 17
+script = ExtResource( 2 )
+
+[node name="weapon" type="Node2D" parent="Ship"]
+position = Vector2( -8, -152 )
+
+[node name="Sprite" type="Sprite" parent="Ship"]
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Ship"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ship/Area2D"]
+polygon = PoolVector2Array( -14.1874, -171.004, -2.16656, -171.004, 10.5613, -129.285, 9.85425, -82.6157, 21.8751, -61.4025, 22.5822, -4.83398, 66.4228, 57.3914, 139.255, 31.2285, 139.255, -75.5447, 156.225, -76.2518, 182.388, 43.2493, 165.418, 99.1107, 84.8076, 100.525, 86.2218, 118.91, 25.4106, 145.78, -38.229, 145.78, -98.3331, 121.738, -97.626, 99.8178, -183.893, 99.1107, -200.864, 46.7848, -173.286, -78.3731, -156.316, -76.9589, -155.609, 30.5214, -83.4839, 55.2701, -36.8148, -7.66241, -36.8148, -59.9883, -24.0869, -81.9086, -24.794, -131.406 )
+
+[node name="Engine Sound" type="AudioStreamPlayer2D" parent="Ship"]
+position = Vector2( -2.06018, 10.2638 )
+scale = Vector2( 2, 2 )
+stream = ExtResource( 7 )
+volume_db = -4.913
+pitch_scale = 1.5
+
+[node name="Rocks" parent="." instance=ExtResource( 3 )]
+position = Vector2( -5.50317, -530.684 )
+
+[node name="RockThrower" type="Node2D" parent="."]
+position = Vector2( 10.662, -1035.18 )
+rotation = 1.5708
+script = ExtResource( 179 )
+
+[node name="UI" type="Control" parent="."]
+margin_left = 0.75
+margin_right = 1021.75
+margin_bottom = 599.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health Panel" type="Panel" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+margin_right = 276.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health Label" type="Label" parent="UI/Health Panel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -13.0
+margin_right = 68.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 5 )
+text = "Health: "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="UI/Health Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -13.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 5 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points Panel" type="Panel" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -126.0
+margin_right = 276.0
+margin_bottom = -70.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Point Label" type="Label" parent="UI/Points Panel"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -13.0
+margin_right = 66.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 5 )
+text = "Points: "
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="UI/Points Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -13.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 5 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_shape_entered" from="Ship/Area2D" to="Ship" method="_on_Area2D_body_shape_entered"]
+[connection signal="finished" from="Ship/Engine Sound" to="Ship" method="_on_Engine_Sound_finished"]
