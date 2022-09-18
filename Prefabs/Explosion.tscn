@@ -3,7 +3,6 @@
 [ext_resource path="res://Scripts/Explosion.gd" type="Script" id=1]
 
 [node name="Explosion" type="CPUParticles2D"]
-position = Vector2( -0.267685, 0.817673 )
 scale = Vector2( 1.00847, 1.03941 )
 emitting = false
 amount = 50

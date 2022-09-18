@@ -1,36 +1,41 @@
-extends Area2D
+extends Node2D
 
 var timer = 0
 var speed = 1
-export var lifetime = 5.0
+var explosion
+var explosion_instance
+export var lifetime = 7.0
 
 func _ready():
-	self.get_node("AnimatedSprite").frame = Globals.laser
+	explosion = load("res://Prefabs/Explosion.tscn")
+	explosion_instance = explosion.instance()
 	self.get_node("Laser Sound").play()
 
 func _process(delta):
 	speed -= 2
-	self.position += Vector2(-150 + speed, 0) * delta
+	self.position += Vector2(0, -150 + speed) * delta
 	timer += delta
 	if timer >= lifetime:
 		self.queue_free()
 
-func _on_Laser_1_body_shape_entered(_body_id, body, _body_shape, _local_shape):
-	if body.name == "Laser 1" ||  body.name == "Laser 2":
-		print(body.name)
-	else:
-		get_tree().get_root().get_node("Space/ExplodeParticleEffect").global_position = body.global_position
-		body.queue_free()
-		get_tree().get_root().get_node("Space/ExplodeParticleEffect").emitting = true
+
+func _on_1_area_entered(area):
+	if area.name == "1" || area.name == "2":
+		return
+	if area.name == "Enemy Body":
+		area.get_parent().queue_free()
+		explosion_instance.global_position = self.global_position
+		self.get_parent().add_child(explosion_instance)
 		Globals.points += 10
 		self.queue_free()
 
-func _on_Laser_2_body_shape_entered(_body_id, body, _body_shape, _local_shape):
-	if body.name == "Laser 1" ||  body.name == "Laser 2":
-		print(body.name)
-	else:
-		get_tree().get_root().get_node("Space/ExplodeParticleEffect2").global_position = body.global_position
-		body.queue_free()
-		get_tree().get_root().get_node("Space/ExplodeParticleEffect2").emitting = true
+func _on_2_area_entered(area):
+	if area.name == "1" || area.name == "2":
+		return
+	if area.name == "Enemy Body":
+		area.get_parent().queue_free()
+		explosion_instance.global_position = self.global_position
+		self.get_parent().add_child(explosion_instance)
 		Globals.points += 10
 		self.queue_free()
+		

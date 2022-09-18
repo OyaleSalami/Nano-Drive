@@ -137,7 +137,7 @@ polygon = PoolVector2Array( -1.03372, -29.133, 15.9752, -25.6682, 27.3145, -15.5
 
 [node name="Rock" type="AnimatedSprite" parent="Rock1"]
 frames = SubResource( 1 )
-frame = 7
+frame = 14
 playing = true
 
 [node name="Rock2" type="RigidBody2D" parent="."]
@@ -151,7 +151,7 @@ polygon = PoolVector2Array( -2.97449, -26.9459, 6.03094, -26.9459, 15.5661, -24.
 
 [node name="Rock" type="AnimatedSprite" parent="Rock2"]
 frames = SubResource( 2 )
-frame = 2
+frame = 9
 playing = true
 
 [node name="Rock3" type="RigidBody2D" parent="."]
@@ -164,7 +164,6 @@ polygon = PoolVector2Array( -15.5452, -19.3236, -2.83163, -26.7398, 14.9144, -24
 
 [node name="Rock" type="AnimatedSprite" parent="Rock3"]
 frames = SubResource( 3 )
-frame = 9
 playing = true
 
 [node name="Rock4" type="RigidBody2D" parent="."]
@@ -178,7 +177,7 @@ polygon = PoolVector2Array( -3.91412, -25.5837, 16.897, -20.5296, 24.3295, -11.9
 
 [node name="Rock" type="AnimatedSprite" parent="Rock4"]
 frames = SubResource( 4 )
-frame = 12
+frame = 3
 playing = true
 
 [node name="Rock5" type="RigidBody2D" parent="."]
@@ -192,5 +191,4 @@ polygon = PoolVector2Array( -0.56665, -28.9275, 19.7897, -22.2533, 29.801, -16.2
 
 [node name="Rock" type="AnimatedSprite" parent="Rock5"]
 frames = SubResource( 5 )
-frame = 9
 playing = true

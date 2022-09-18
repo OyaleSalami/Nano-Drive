@@ -52,10 +52,11 @@ func _physics_process(delta):
 			engine_audio.play()
 			finished = false
 
-func _on_Area2D_body_shape_entered(_body_id, body, _body_shape, _local_shape):
+func _on_Ship_Body_body_entered(body):
 	if body.name == "health":
 		Globals.health += 30
 		return
+		
 	var expl = explosion.instance()
 	self.get_node("../Explosion Sound").play()
 	self.get_parent().get_parent().add_child(expl)
@@ -64,6 +65,13 @@ func _on_Area2D_body_shape_entered(_body_id, body, _body_shape, _local_shape):
 	body.queue_free()
 	Globals.health -= 5
 
+func _on_Ship_Body_area_entered(area):
+	if (area.name == "1") || (area.name == "2"):
+		var expl = load("res://Explosion.tscn").instance()
+		expl.global_position = area.global_position
+		self.get_parent().add_child(expl)
+		Globals.health -= 10
+		area.queue_free()
 
 func _on_Engine_Sound_finished():
 	finished = true
