@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/dg6.png" type="Texture" id=1]
+[ext_resource path="res://GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/arrowLeft.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/arrowRight.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.0235294 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.52549, 0.627451, 0.635294, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+use_mipmaps = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 302.0
+margin_top = 100.0
+margin_right = -302.0
+margin_bottom = -100.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Random Picture" type="TextureButton" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.0
+margin_top = -116.0
+margin_right = 111.0
+margin_bottom = 112.0
+texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode" type="Button" parent="Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -71.0
+custom_fonts/font = SubResource( 2 )
+text = "PLAY"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tabs" type="Panel" parent="Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right Button" type="TextureButton" parent="Panel/Tabs"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left Button" type="TextureButton" parent="Panel/Tabs"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 4 )
+
+[node name="Game Name" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -70.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.733333, 0.788235, 0.054902, 1 )
+custom_colors/font_color_shadow = Color( 0.184314, 0.301961, 0.156863, 1 )
+text = "Nano Drive(Conquer)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="Panel/Mode" to="." method="_on_Mode_Button_down"]
+[connection signal="button_down" from="Panel/Tabs/Right Button" to="." method="_on_Right_Button_down"]
+[connection signal="button_down" from="Panel/Tabs/Left Button" to="." method="_on_Left_Button_down"]
