@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/audioOff.png-613a13013319cdcd24c9e0aadb3f878f.stex"
+path="res://.import/audioOff.png-19ddaf1724c78feaae187a59077b9e61.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/audioOff.png"
-dest_files=[ "res://.import/audioOff.png-613a13013319cdcd24c9e0aadb3f878f.stex" ]
+source_file="res://Sprites/UI/audioOff.png"
+dest_files=[ "res://.import/audioOff.png-19ddaf1724c78feaae187a59077b9e61.stex" ]
 
 [params]
 
@@ -28,7 +28,6 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
-process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

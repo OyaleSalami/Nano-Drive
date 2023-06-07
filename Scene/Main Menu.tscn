@@ -1,0 +1,150 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/NEUROPOL.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/dg6.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/forward.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/backward.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 65
+outline_size = 2
+outline_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 5
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0.0313726 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.741176, 0.678431, 0.313726, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 2
+outline_color = Color( 0.741176, 0.678431, 0.313726, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = 2
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.11893
+margin_right = -2.1189
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game Name" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.152
+margin_top = 10.0
+margin_bottom = -0.200005
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+text = "Nano Drive"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode Panel" type="Panel" parent="."]
+anchor_left = 0.295
+anchor_top = 0.222
+anchor_right = 0.705
+anchor_bottom = 0.888
+margin_left = -0.0800171
+margin_top = -0.200012
+margin_right = 0.0799561
+margin_bottom = 0.199951
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode Texture" type="TextureButton" parent="Mode Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.0
+margin_top = -114.0
+margin_right = 111.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 111, 114 )
+texture_normal = ExtResource( 3 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode Select Button" type="Button" parent="Mode Panel"]
+anchor_top = 0.822
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.199982
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+custom_colors/font_color_hover = Color( 0.25098, 0.270588, 0.32549, 1 )
+custom_colors/font_color_pressed = Color( 0.12549, 0.145098, 0.192157, 1 )
+text = "PLAY"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Nav Buttons" type="Panel" parent="Mode Panel"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right Button" type="TextureButton" parent="Mode Panel/Nav Buttons"]
+modulate = Color( 0.886275, 0.733333, 0.909804, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -25.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 4 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left Button" type="TextureButton" parent="Mode Panel/Nav Buttons"]
+modulate = Color( 0.886275, 0.733333, 0.909804, 1 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -25.0
+margin_right = 50.0
+margin_bottom = 25.0
+texture_normal = ExtResource( 5 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_down" from="Mode Panel/Mode Select Button" to="." method="_on_Mode_Button_down"]
+[connection signal="button_down" from="Mode Panel/Nav Buttons/Right Button" to="." method="_on_Right_Button_down"]
+[connection signal="button_down" from="Mode Panel/Nav Buttons/Left Button" to="." method="_on_Left_Button_down"]

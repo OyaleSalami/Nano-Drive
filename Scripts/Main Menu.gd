@@ -1,11 +1,11 @@
 extends Control
 
 var index = 0
-var modes = ["Play", "Settings", "Store", "Exit"]
+var modes = ["Play", "Settings", "Store", "Credits"]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	self.get_node("Panel/Mode").text = modes[index]
+	self.get_node("Mode Panel/Mode Select Button").text = modes[index]
 
 func _on_Right_Button_down():
 	if (index + 1) >= modes.size():
@@ -22,5 +22,5 @@ func _on_Mode_Button_down():
 		self.get_tree().quit()
 		return
 		
-	var scene = modes[index] + ".tscn"
+	var scene = "res://Scene/" + modes[index] + ".tscn"
 	var _nextscene = get_tree().change_scene(scene)

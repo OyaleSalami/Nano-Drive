@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Scripts/Settings.gd" type="Script" id=1]
 [ext_resource path="res://GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/arrowLeft.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/audioOn.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/audioOff.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/musicOff.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/musicOn.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/arrowLeft.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/audioOn.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/audioOff.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/musicOff.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/musicOn.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0.0235294 )
