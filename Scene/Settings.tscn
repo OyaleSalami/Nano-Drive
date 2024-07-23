@@ -1,29 +1,36 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Settings.gd" type="Script" id=1]
 [ext_resource path="res://GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/UI/arrowLeft.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/backward.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/UI/audioOn.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/UI/audioOff.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/UI/musicOff.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/UI/musicOn.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/NEUROPOL.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0.0235294 )
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0980392 )
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.52549, 0.627451, 0.635294, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 0.0941176 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+outline_size = 2
+outline_color = Color( 0.737255, 0.670588, 0.298039, 1 )
 use_mipmaps = true
-font_data = ExtResource( 2 )
+use_filter = true
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 32
@@ -42,29 +49,37 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 302.0
-margin_top = 100.0
-margin_right = -302.0
-margin_bottom = -100.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left Button" type="TextureButton" parent="Panel"]
-margin_right = 50.0
-margin_bottom = 50.0
+[node name="Back Button" type="Panel" parent="Panel"]
+margin_left = 4.0
+margin_top = 34.0
+margin_right = 127.0
+margin_bottom = 59.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left Button" type="TextureButton" parent="Panel/Back Button"]
+anchor_right = 0.203
+anchor_bottom = 0.893
+margin_right = 25.031
+margin_bottom = 24.996
+rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Game Name" type="Label" parent="Panel"]
-anchor_top = 1.0
+[node name="Title" type="Label" parent="Panel/Back Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -70.0
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
 text = "Settings"
 align = 1
 valign = 1
@@ -105,4 +120,4 @@ custom_fonts/font = SubResource( 3 )
 pressed = true
 text = "Music"
 
-[connection signal="button_down" from="Panel/Left Button" to="." method="_on_Left_Button_down"]
+[connection signal="button_down" from="Panel/Back Button/Left Button" to="." method="_on_Left_Button_down"]

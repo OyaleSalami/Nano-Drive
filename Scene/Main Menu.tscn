@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/NEUROPOL.ttf" type="DynamicFontData" id=2]
@@ -6,8 +6,14 @@
 [ext_resource path="res://Sprites/UI/forward.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/UI/backward.png" type="Texture" id=5]
 
-[sub_resource type="DynamicFont" id=1]
-size = 65
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0980392 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0980392 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
 outline_size = 2
 outline_color = Color( 0.737255, 0.670588, 0.298039, 1 )
 use_mipmaps = true
@@ -15,7 +21,7 @@ use_filter = true
 extra_spacing_char = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.6, 0.6, 0.6, 0.0313726 )
 border_width_left = 3
 border_width_top = 3
@@ -27,7 +33,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 32
 outline_size = 2
 outline_color = Color( 0.741176, 0.678431, 0.313726, 1 )
@@ -36,7 +42,7 @@ use_filter = true
 extra_spacing_char = 2
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=4]
+[sub_resource type="StyleBoxEmpty" id=6]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -48,13 +54,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.51978
+margin_right = 2.51978
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Game Name" type="Label" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.152
-margin_top = 10.0
-margin_bottom = -0.200005
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.14902, 0.172549, 0.231373, 1 )
+anchor_bottom = 0.101
+margin_top = 42.0
+margin_right = -3.05176e-05
+margin_bottom = 42.28
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
 text = "Nano Drive"
 align = 1
 valign = 1
@@ -64,15 +82,15 @@ __meta__ = {
 }
 
 [node name="Mode Panel" type="Panel" parent="."]
-anchor_left = 0.295
-anchor_top = 0.222
-anchor_right = 0.705
-anchor_bottom = 0.888
-margin_left = -0.0800171
-margin_top = -0.200012
-margin_right = 0.0799561
-margin_bottom = 0.199951
-custom_styles/panel = SubResource( 2 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -169.5
+margin_top = -193.0
+margin_right = 169.5
+margin_bottom = 193.0
+custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,7 +116,7 @@ anchor_top = 0.822
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 0.199982
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.14902, 0.172549, 0.231373, 1 )
 custom_colors/font_color_hover = Color( 0.25098, 0.270588, 0.32549, 1 )
 custom_colors/font_color_pressed = Color( 0.12549, 0.145098, 0.192157, 1 )
@@ -112,7 +130,7 @@ __meta__ = {
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-custom_styles/panel = SubResource( 4 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
