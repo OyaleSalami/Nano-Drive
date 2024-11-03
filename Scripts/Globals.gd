@@ -1,5 +1,8 @@
 extends Node
 
+var music = true
+var sfx = true
+
 var health
 var points
 

@@ -1,168 +1,227 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/NEUROPOL.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/dg6.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/UI/forward.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/UI/backward.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/SAIBA-45.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/UI/info.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/chevron_right.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/chevron_left.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Space Monkey.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/dg2.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/AtomicAge-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0980392 )
+bg_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 0.0980392 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 36
-outline_size = 2
-outline_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+[sub_resource type="DynamicFont" id=2]
+size = 62
+outline_size = 1
+outline_color = Color( 0.996078, 1, 0, 1 )
 use_mipmaps = true
 use_filter = true
-extra_spacing_char = 5
-font_data = ExtResource( 2 )
+extra_spacing_char = 2
+font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.6, 0.6, 0.6, 0.0313726 )
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.741176, 0.678431, 0.313726, 1 )
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 307, 297 )
+
 [sub_resource type="DynamicFont" id=5]
-size = 32
-outline_size = 2
-outline_color = Color( 0.741176, 0.678431, 0.313726, 1 )
+size = 25
+outline_size = 1
 use_mipmaps = true
-use_filter = true
-extra_spacing_char = 2
+extra_spacing_char = 5
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=8]
+size = 25
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -2.11893
-margin_right = -2.1189
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.51978
-margin_right = 2.51978
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Game Name" type="Label" parent="."]
+anchor_top = 0.069
 anchor_right = 1.0
-anchor_bottom = 0.101
-margin_top = 42.0
-margin_right = -3.05176e-05
-margin_bottom = 42.28
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
-text = "Nano Drive"
+anchor_bottom = 0.208
+margin_top = 0.319996
+margin_bottom = 0.23999
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 0 )
+text = "Nano
+Drive"
 align = 1
 valign = 1
-uppercase = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Mode Panel" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -169.5
-margin_top = -193.0
-margin_right = 169.5
-margin_bottom = 193.0
+anchor_left = 0.253
+anchor_top = 0.347
+anchor_right = 0.747
+anchor_bottom = 0.694
+margin_left = 0.0349884
+margin_top = 0.160004
+margin_right = -0.0350037
+margin_bottom = 0.320007
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Mode Image" type="Panel" parent="Mode Panel"]
+anchor_left = 0.25
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.7
+margin_right = -1.52588e-05
+margin_bottom = -1.52588e-05
 custom_styles/panel = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mode Texture" type="TextureButton" parent="Mode Panel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -111.0
-margin_top = -114.0
-margin_right = 111.0
-margin_bottom = 114.0
-rect_pivot_offset = Vector2( 111, 114 )
-texture_normal = ExtResource( 3 )
-stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Mode Select Button" type="Button" parent="Mode Panel"]
-anchor_top = 0.822
+anchor_top = 0.788
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 0.199982
+margin_top = -1.52588e-05
+margin_bottom = -3.0
 custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.14902, 0.172549, 0.231373, 1 )
-custom_colors/font_color_hover = Color( 0.25098, 0.270588, 0.32549, 1 )
-custom_colors/font_color_pressed = Color( 0.12549, 0.145098, 0.192157, 1 )
-text = "PLAY"
+custom_colors/font_color = Color( 1, 0.827451, 0, 0 )
+custom_colors/font_color_hover = Color( 1, 0.670588, 0.298039, 1 )
+custom_colors/font_color_pressed = Color( 0.737255, 0.670588, 0.298039, 1 )
+text = "Play"
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Nav Buttons" type="Panel" parent="Mode Panel"]
-anchor_top = 0.5
+anchor_top = 0.4
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 0.6
 custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Right Button" type="TextureButton" parent="Mode Panel/Nav Buttons"]
-modulate = Color( 0.886275, 0.733333, 0.909804, 1 )
-anchor_left = 1.0
+[node name="Left" type="Button" parent="Mode Panel/Nav Buttons"]
+anchor_right = 0.25
+anchor_bottom = 1.0
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="Button" parent="Mode Panel/Nav Buttons"]
+anchor_left = 0.75
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.52588e-05
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info Button" type="Button" parent="."]
+anchor_left = 0.914
+anchor_top = 0.951
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.170044
+margin_top = 0.279907
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.123
+anchor_top = 0.272
+anchor_right = 0.877
+anchor_bottom = 0.728
+margin_left = 0.184998
+margin_top = -0.340012
+margin_right = -0.185028
+margin_bottom = 0.339966
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Studio Title" type="Label" parent="Credits Panel"]
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -25.0
-margin_bottom = 25.0
-texture_normal = ExtResource( 4 )
-stretch_mode = 5
+margin_top = -17.5
+margin_bottom = 17.5
+custom_fonts/font = SubResource( 8 )
+text = "credits:
+perpetual stewdios"
+align = 1
+valign = 1
+clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left Button" type="TextureButton" parent="Mode Panel/Nav Buttons"]
-modulate = Color( 0.886275, 0.733333, 0.909804, 1 )
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -25.0
-margin_right = 50.0
-margin_bottom = 25.0
-texture_normal = ExtResource( 5 )
-stretch_mode = 5
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="button_down" from="Mode Panel/Mode Select Button" to="." method="_on_Mode_Button_down"]
-[connection signal="button_down" from="Mode Panel/Nav Buttons/Right Button" to="." method="_on_Right_Button_down"]
-[connection signal="button_down" from="Mode Panel/Nav Buttons/Left Button" to="." method="_on_Left_Button_down"]
+[connection signal="button_up" from="Mode Panel/Mode Select Button" to="." method="_on_Mode_Select_button_up"]
+[connection signal="button_up" from="Mode Panel/Nav Buttons/Left" to="." method="_on_Left_button_up"]
+[connection signal="button_up" from="Mode Panel/Nav Buttons/Right" to="." method="_on_Right_button_up"]
+[connection signal="button_up" from="Info Button" to="." method="_on_Info_button_up"]

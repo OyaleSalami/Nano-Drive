@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=2]
 
-[ext_resource path="res://GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/Game Manager.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/UI.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/SpaceShipExtraLarge_0.png" type="Texture" id=4]

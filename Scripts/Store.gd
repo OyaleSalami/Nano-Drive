@@ -35,5 +35,5 @@ func _on_Left_Button_down():
 	index -= 1
 	show_item(index)
 
-func _on_Back_button_down():
-	var _scene = self.get_tree().change_scene("res://Game.tscn")
+func _on_Back_button_up():
+	var _scene = self.get_tree().change_scene("res://Scene/Main Menu.tscn")
