@@ -1,34 +1,36 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Settings.gd" type="Script" id=1]
-[ext_resource path="res://GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/arrowLeft.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/audioOn.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/audioOff.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/musicOff.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/musicOn.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/SAIBA-45.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Sprites/UI/chevron_left.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/audioOn.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/audioOff.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/musicOff.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/UI/musicOn.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/Space Monkey.otf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0.0235294 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.52549, 0.627451, 0.635294, 1 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+bg_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 32
-use_mipmaps = true
-font_data = ExtResource( 2 )
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="DynamicFont" id=3]
-size = 32
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
+extra_spacing_char = 1
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.737255, 0.670588, 0.298039, 0.0588235 )
+
+[sub_resource type="DynamicFont" id=7]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+extra_spacing_char = 3
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -36,73 +38,110 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 302.0
-margin_top = 100.0
-margin_right = -302.0
-margin_bottom = -100.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Left Button" type="TextureButton" parent="Panel"]
-margin_right = 50.0
-margin_bottom = 50.0
-texture_normal = ExtResource( 3 )
+[node name="Settings Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="Settings Panel"]
+anchor_left = 0.253
+anchor_top = 0.419
+anchor_right = 0.747
+anchor_bottom = 0.581
+margin_left = 0.0349884
+margin_top = 0.319977
+margin_right = -0.0350037
+margin_bottom = -0.320007
+split_offset = 500
+collapsed = true
+dragger_visibility = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Game Name" type="Label" parent="Panel"]
-anchor_top = 1.0
+[node name="SfxButton" type="CheckButton" parent="Settings Panel/VSplitContainer"]
+margin_right = 200.0
+margin_bottom = 58.0
+custom_icons/off = ExtResource( 5 )
+custom_icons/on = ExtResource( 4 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.827451, 0, 1 )
+pressed = true
+text = "SFX"
+
+[node name="MusicButton" type="CheckButton" parent="Settings Panel/VSplitContainer"]
+margin_top = 58.0
+margin_right = 200.0
+margin_bottom = 116.0
+custom_icons/off = ExtResource( 6 )
+custom_icons/on = ExtResource( 7 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_hover_pressed = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.827451, 0, 1 )
+pressed = true
+text = "Music"
+
+[node name="Top Panel" type="Panel" parent="."]
+anchor_top = 0.069
+anchor_right = 0.494
+anchor_bottom = 0.139
+margin_top = 0.319996
+margin_right = -0.0700073
+margin_bottom = -0.0800095
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back Button" type="Button" parent="Top Panel"]
+modulate = Color( 0.737255, 0.670588, 0.298039, 1 )
+anchor_right = 0.25
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Top Panel"]
+anchor_left = 0.25
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -70.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.996078, 1, 0, 1 )
 text = "Settings"
-align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VSplitContainer" type="VSplitContainer" parent="Panel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -75.5
-margin_top = -70.0
-margin_right = 75.5
-margin_bottom = 70.0
-split_offset = 500
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SfxButton" type="CheckButton" parent="Panel/VSplitContainer"]
-margin_right = 151.0
-margin_bottom = 70.0
-custom_icons/off = ExtResource( 5 )
-custom_icons/on = ExtResource( 4 )
-custom_fonts/font = SubResource( 3 )
-pressed = true
-text = "SFX"
-
-[node name="MusicButton" type="CheckButton" parent="Panel/VSplitContainer"]
-margin_top = 82.0
-margin_right = 151.0
-margin_bottom = 140.0
-custom_icons/off = ExtResource( 6 )
-custom_icons/on = ExtResource( 7 )
-custom_fonts/font = SubResource( 3 )
-pressed = true
-text = "Music"
-
-[connection signal="button_down" from="Panel/Left Button" to="." method="_on_Left_Button_down"]
+[connection signal="toggled" from="Settings Panel/VSplitContainer/SfxButton" to="." method="_on_SfxButton_toggled"]
+[connection signal="toggled" from="Settings Panel/VSplitContainer/MusicButton" to="." method="_on_MusicButton_toggled"]
+[connection signal="button_down" from="Top Panel/Back Button" to="." method="_on_Back_Button_down"]

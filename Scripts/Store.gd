@@ -1,39 +1,45 @@
 extends Control
 
-var index = 0
-var items = ["Station 1", "Station 2", "Statiion 3", "Laser 1", "Laser 2"]
-
 func _ready():
-	show_item(index)
+	ResetMenus()
 
-func show_item(number):
-	var i = 0
-	
-	while i < items.size():
-		self.get_node("Panel/Sections").get_children()[i].hide()
-		i += 1
-		
-	self.get_node("Panel/Sections").get_children()[number].show()
-	self.get_node("Panel/Head").text = "1000 points (" + items[number] + ") "
+func SetDisplayText(text):
+	get_node("Details Panel/Text").text = text
 
-func _on_Unlock_button_down():
-	if Globals.total_points > 1000:
-		Globals.total_points -= 1000
-		self.get_node("Panel/Head").text = "Owned"
+func DisableAllMenus():
+	get_node("Store Menu").visible = false
+	get_node("Stations Menu").visible = false
+	get_node("Ships Menu").visible = false
+	get_node("Cosmetics Menu").visible = false
+	get_node("Regions Menu").visible = false
 
-func _on_Right_Button_down():
-	if (index + 1) >= items.size():
-		show_item(index)
-		return
-	index += 1
-	show_item(index)
+func ResetMenus():
+	DisableAllMenus()
+	get_node("Store Menu").visible = true
+	SetDisplayText("Select An Item")
 
-func _on_Left_Button_down():
-	if (index - 1) < 0:
-		show_item(index)
-		return
-	index -= 1
-	show_item(index)
+func _on_Cancel_Select_button_up():
+	ResetMenus()
 
-func _on_Back_button_down():
-	var _scene = self.get_tree().change_scene("res://Game.tscn")
+func _on_Stations_Menu_Button_up():
+	DisableAllMenus()
+	get_node("Stations Menu").visible = true
+	SetDisplayText("Unlock A New Station")
+
+func _on_Ships_Menu_Button_up():
+	DisableAllMenus()
+	get_node("Ships Menu").visible = true
+	SetDisplayText("Unlock A New Ship")
+
+func _on_Cosmetics_Menu_Button_up():
+	DisableAllMenus()
+	get_node("Cosmetics Menu").visible = true
+	SetDisplayText("Get A New Look")
+
+func _on_Regions_Menu_Button_up():
+	DisableAllMenus()
+	get_node("Regions Menu").visible = true
+	SetDisplayText("Unlock A New Region")
+
+func _on_Back_Button_up():
+	var _scene = self.get_tree().change_scene("res://Scene/Main Menu.tscn")
