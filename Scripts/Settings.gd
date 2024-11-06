@@ -3,10 +3,6 @@ extends Control
 func _ready():
 	LoadDefaultValues()
 
-func _process(_delta):
-	
-	pass
-
 func LoadDefaultValues():
 	get_node("Settings Panel/VSplitContainer/SfxButton").pressed = Globals.sfx
 	get_node("Settings Panel/VSplitContainer/MusicButton").pressed = Globals.music

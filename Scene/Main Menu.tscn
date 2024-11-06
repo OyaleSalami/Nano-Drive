@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Main Menu.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/SAIBA-45.ttf" type="DynamicFontData" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/UI/chevron_left.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/Space Monkey.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Sprites/dg2.png" type="Texture" id=7]
-[ext_resource path="res://Fonts/ReemKufiFun-VariableFont_wght.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Fonts/NEUROPOL.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
@@ -41,7 +41,9 @@ region_rect = Rect2( 0, 0, 307, 297 )
 [sub_resource type="DynamicFont" id=5]
 size = 25
 outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
+use_filter = true
 extra_spacing_char = 5
 font_data = ExtResource( 2 )
 
@@ -62,11 +64,82 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=8]
-size = 20
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-extra_spacing_space = 1
 font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.996078, 1, 0, 0.0980392 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.996078, 1, 0, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_right = 20
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.996078, 1, 0, 0.0980392 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.996078, 1, 0, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_bottom_left = 20
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -93,7 +166,7 @@ anchor_bottom = 0.208
 margin_top = 0.319996
 margin_bottom = 0.23999
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 0 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 0 )
 text = "Nano
 Drive"
 align = 1
@@ -137,9 +210,9 @@ anchor_bottom = 1.0
 margin_top = -1.52588e-05
 margin_bottom = -3.0
 custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 1, 0.827451, 0, 0 )
-custom_colors/font_color_hover = Color( 1, 0.670588, 0.298039, 1 )
-custom_colors/font_color_pressed = Color( 0.737255, 0.670588, 0.298039, 1 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+custom_colors/font_color_hover = Color( 0.996078, 1, 0, 1 )
+custom_colors/font_color_pressed = Color( 1, 0.827451, 0, 1 )
 text = "Play"
 flat = true
 __meta__ = {
@@ -177,20 +250,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Info Button" type="Button" parent="."]
-anchor_left = 0.914
-anchor_top = 0.951
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -0.170044
-margin_top = 0.279907
-icon = ExtResource( 3 )
-flat = true
-expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Credits Panel" type="Panel" parent="."]
 visible = false
 anchor_left = 0.253
@@ -221,7 +280,90 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Exit Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.253
+anchor_top = 0.347
+anchor_right = 0.747
+anchor_bottom = 0.694
+margin_left = 0.0349884
+margin_top = 0.160004
+margin_right = -0.0350037
+margin_bottom = 0.320007
+custom_styles/panel = SubResource( 7 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Exit Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 8 )
+text = "Are You Sure You Want To Exit?"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes Button" type="Button" parent="Exit Panel"]
+anchor_left = 0.675
+anchor_top = 0.82
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.52588e-05
+margin_top = -1.52588e-05
+margin_right = -1.52588e-05
+custom_styles/hover = SubResource( 10 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
+text = "Yes"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="No Button" type="Button" parent="Exit Panel"]
+anchor_top = 0.82
+anchor_right = 0.325
+anchor_bottom = 1.0
+margin_top = -1.52588e-05
+margin_right = -7.62939e-06
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = SubResource( 8 )
+text = "No"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info Button" type="Button" parent="."]
+modulate = Color( 0.737255, 0.670588, 0.298039, 1 )
+anchor_left = 0.914
+anchor_top = 0.94
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.170074
+margin_top = 0.169922
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [connection signal="button_up" from="Mode Panel/Mode Select Button" to="." method="_on_Mode_Select_button_up"]
 [connection signal="button_up" from="Mode Panel/Nav Buttons/Left" to="." method="_on_Left_button_up"]
 [connection signal="button_up" from="Mode Panel/Nav Buttons/Right" to="." method="_on_Right_button_up"]
+[connection signal="button_up" from="Exit Panel/Yes Button" to="." method="_on_Yes_Button_up"]
+[connection signal="button_up" from="Exit Panel/No Button" to="." method="_on_No_Button_up"]
 [connection signal="button_up" from="Info Button" to="." method="_on_Info_button_up"]

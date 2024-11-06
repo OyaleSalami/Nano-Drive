@@ -1,53 +1,112 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Sprites/ft2.png" type="Texture" id=1]
-[ext_resource path="res://Fonts/GoogleSans-Regular-v1.27.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Sprites/ft4.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Laser Sprites/12.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/Space Monkey.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/dg5.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/dg1.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/NEUROPOL.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Fonts/SAIBA-45.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Sprites/ft3.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Laser Sprites/11.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/UI/backward.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/UI/chevron_left.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/UI/arrowLeft.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/UI/arrowRight.png" type="Texture" id=10]
 [ext_resource path="res://Scripts/Store.gd" type="Script" id=11]
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
+[ext_resource path="res://Fonts/Space Monkey.otf" type="DynamicFontData" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.6, 0.6, 0.6, 0.0235294 )
+bg_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color( 0.52549, 0.627451, 0.635294, 1 )
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="DynamicFont" id=2]
-size = 32
-use_mipmaps = true
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=17]
 size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 use_filter = true
-extra_spacing_top = 5
-extra_spacing_bottom = 5
-font_data = ExtResource( 2 )
+extra_spacing_char = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.996078, 1, 0, 0.0588235 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 169, 214 )
+
+[sub_resource type="DynamicFont" id=10]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.996078, 1, 0, 0.0980392 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.996078, 1, 0, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.737255, 0.670588, 0.298039, 0 )
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 230, 185 )
+
+[sub_resource type="StyleBoxTexture" id=16]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 193, 185 )
+
+[sub_resource type="StyleBoxTexture" id=14]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 351, 360 )
+modulate_color = Color( 0.509804, 0.72549, 0.894118, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.737255, 0.670588, 0.298039, 0.0588235 )
+bg_color = Color( 0.137255, 0.2, 0.235294, 1 )
 
 [sub_resource type="DynamicFont" id=7]
 outline_size = 1
-outline_color = Color( 0.737255, 0.670588, 0.298039, 1 )
+outline_color = Color( 0, 0, 0, 1 )
 use_mipmaps = true
 extra_spacing_char = 3
 font_data = ExtResource( 5 )
@@ -58,181 +117,280 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( -241, -219.289 )
 script = ExtResource( 11 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -147.0
-margin_top = -145.0
-margin_right = 147.0
-margin_bottom = 145.0
-custom_styles/panel = SubResource( 1 )
+[node name="Details Panel" type="Panel" parent="."]
+anchor_left = 0.053
+anchor_top = 0.184
+anchor_right = 0.947
+anchor_bottom = 0.416
+margin_left = 0.0349979
+margin_top = 0.019989
+margin_right = -0.0350037
+margin_bottom = -0.0200195
+custom_styles/panel = SubResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sections" type="Control" parent="Panel"]
+[node name="Text" type="Label" parent="Details Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="0" type="TextureButton" parent="Panel/Sections"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -140.5
-margin_top = -48.5
-margin_right = 140.5
-margin_bottom = 48.5
-texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="1" type="TextureButton" parent="Panel/Sections"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -84.5
-margin_top = -107.0
-margin_right = 84.5
-margin_bottom = 107.0
-texture_normal = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="2" type="TextureButton" parent="Panel/Sections"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -115.0
-margin_top = -92.5
-margin_right = 115.0
-margin_bottom = 92.5
-texture_normal = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="3" type="TextureButton" parent="Panel/Sections"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -124.5
-margin_top = -72.0
-margin_right = 124.5
-margin_bottom = 72.0
-texture_normal = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="4" type="TextureButton" parent="Panel/Sections"]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -129.5
-margin_top = -73.0
-margin_right = 129.5
-margin_bottom = 73.0
-texture_normal = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Unlock" type="Button" parent="Panel"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -71.0
-custom_fonts/font = SubResource( 2 )
-text = "Unlock"
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tabs" type="Panel" parent="Panel"]
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-custom_styles/panel = SubResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Right Button" type="TextureButton" parent="Panel/Tabs"]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -25.0
-margin_bottom = 25.0
-texture_normal = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left Button" type="TextureButton" parent="Panel/Tabs"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_top = -25.0
-margin_right = 50.0
-margin_bottom = 25.0
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Head" type="Label" parent="Panel"]
-anchor_right = 1.0
-margin_bottom = 36.0
-custom_fonts/font = SubResource( 4 )
-text = "1000 Points"
+custom_fonts/font = SubResource( 17 )
+text = "Select An Item"
 align = 1
 valign = 1
 autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back Button" type="Button" parent="Details Panel"]
+anchor_left = 0.014
+anchor_top = 0.03
+anchor_right = 0.083
+anchor_bottom = 0.18
+margin_left = -0.0680003
+margin_top = -0.0100002
+margin_right = -0.0460014
+margin_bottom = -0.0600014
+icon = ExtResource( 7 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Store Menu" type="Panel" parent="."]
+anchor_left = 0.086
+anchor_top = 0.474
+anchor_right = 0.914
+anchor_bottom = 0.944
+margin_left = 0.169998
+margin_top = -0.280029
+margin_right = -0.170013
+margin_bottom = 0.319946
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stations Menu Button" type="Panel" parent="Store Menu"]
+anchor_right = 0.448
+anchor_bottom = 0.442
+margin_right = -0.0800018
+margin_bottom = 0.161987
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Store Menu/Stations Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Store Menu/Stations Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Stations"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Store Menu/Stations Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ships Menu Button" type="Panel" parent="Store Menu"]
+anchor_left = 0.552
+anchor_right = 1.0
+anchor_bottom = 0.442
+margin_left = 0.0799866
+margin_bottom = 0.161987
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Store Menu/Ships Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 12 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Store Menu/Ships Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Ships"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Store Menu/Ships Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cosmetics Menu Button" type="Panel" parent="Store Menu"]
+anchor_top = 0.558
+anchor_right = 0.448
+anchor_bottom = 1.0
+margin_top = -0.162003
+margin_right = -0.0800018
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Store Menu/Cosmetics Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 16 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Store Menu/Cosmetics Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Cosmetics"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Store Menu/Cosmetics Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regions Menu Button" type="Panel" parent="Store Menu"]
+anchor_left = 0.552
+anchor_top = 0.558
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0799866
+margin_top = -0.162003
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Store Menu/Regions Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Store Menu/Regions Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Regions"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Store Menu/Regions Menu Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 19 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Top Panel" type="Panel" parent="."]
-margin_top = 50.0
-margin_right = 200.0
-margin_bottom = 100.0
+anchor_top = 0.069
+anchor_right = 0.5
+anchor_bottom = 0.139
+margin_top = 0.319996
+margin_right = -2.5
+margin_bottom = -0.0800095
 custom_styles/panel = SubResource( 6 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Left Button" type="Button" parent="Top Panel"]
+[node name="Back Button" type="Button" parent="Top Panel"]
+modulate = Color( 0.737255, 0.670588, 0.298039, 1 )
 anchor_right = 0.25
 anchor_bottom = 1.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -248,15 +406,348 @@ anchor_left = 0.25
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 7 )
-custom_colors/font_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
+custom_colors/font_color = Color( 0.996078, 1, 0, 1 )
 text = "Store"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stations Menu" type="Panel" parent="."]
+visible = false
+anchor_left = 0.086
+anchor_top = 0.474
+anchor_right = 0.914
+anchor_bottom = 0.944
+margin_left = 0.169998
+margin_top = -0.280029
+margin_right = -0.170013
+margin_bottom = 0.319946
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Station 1" type="Panel" parent="Stations Menu"]
+margin_right = 150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Stations Menu/Station 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Stations Menu/Station 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Station 1"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="button_down" from="Panel/Unlock" to="." method="_on_Unlock_button_down"]
-[connection signal="button_down" from="Panel/Tabs/Right Button" to="." method="_on_Right_Button_down"]
-[connection signal="button_down" from="Panel/Tabs/Left Button" to="." method="_on_Left_Button_down"]
-[connection signal="button_up" from="Top Panel/Left Button" to="." method="_on_Back_button_up"]
+[node name="Station 2" type="Panel" parent="Stations Menu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Stations Menu/Station 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Stations Menu/Station 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Station 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ships Menu" type="Panel" parent="."]
+visible = false
+anchor_left = 0.086
+anchor_top = 0.474
+anchor_right = 0.914
+anchor_bottom = 0.944
+margin_left = 0.169998
+margin_top = -0.280029
+margin_right = -0.170013
+margin_bottom = 0.319946
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ship 1" type="Panel" parent="Ships Menu"]
+margin_right = 150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Ships Menu/Ship 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Ships Menu/Ship 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Ship 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ship 2" type="Panel" parent="Ships Menu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Ships Menu/Ship 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Ships Menu/Ship 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Ship 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cosmetics Menu" type="Panel" parent="."]
+visible = false
+anchor_left = 0.086
+anchor_top = 0.474
+anchor_right = 0.914
+anchor_bottom = 0.944
+margin_left = 0.169998
+margin_top = -0.280029
+margin_right = -0.170013
+margin_bottom = 0.319946
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cosmetic 1" type="Panel" parent="Cosmetics Menu"]
+margin_right = 150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Cosmetics Menu/Cosmetic 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Cosmetics Menu/Cosmetic 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Cosmetic 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cosmetic 2" type="Panel" parent="Cosmetics Menu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Cosmetics Menu/Cosmetic 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Cosmetics Menu/Cosmetic 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Cosmetic 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Regions Menu" type="Panel" parent="."]
+visible = false
+anchor_left = 0.086
+anchor_top = 0.474
+anchor_right = 0.914
+anchor_bottom = 0.944
+margin_left = 0.169998
+margin_top = -0.280029
+margin_right = -0.170013
+margin_bottom = 0.319946
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Region 1" type="Panel" parent="Regions Menu"]
+margin_right = 150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Regions Menu/Region 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Regions Menu/Region 1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Region 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Region 2" type="Panel" parent="Regions Menu"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -150.0
+margin_bottom = 150.0
+custom_styles/panel = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Image" type="Panel" parent="Regions Menu/Region 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = -25.0
+custom_styles/panel = SubResource( 13 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Regions Menu/Region 2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 1, 0.827451, 0, 1 )
+text = "Region 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Details Panel/Back Button" to="." method="_on_Cancel_Select_button_up"]
+[connection signal="button_up" from="Store Menu/Stations Menu Button/Button" to="." method="_on_Stations_Menu_Button_up"]
+[connection signal="button_up" from="Store Menu/Ships Menu Button/Button" to="." method="_on_Ships_Menu_Button_up"]
+[connection signal="button_up" from="Store Menu/Cosmetics Menu Button/Button" to="." method="_on_Cosmetics_Menu_Button_up"]
+[connection signal="button_up" from="Store Menu/Regions Menu Button/Button" to="." method="_on_Regions_Menu_Button_up"]
+[connection signal="button_up" from="Top Panel/Back Button" to="." method="_on_Back_Button_up"]

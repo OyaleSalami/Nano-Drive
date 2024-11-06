@@ -4,10 +4,17 @@ var index = 0 #Shows the selected mode
 var modes = ["Play", "Settings", "Store", "Exit"]
 
 func _ready():
+	DisableAllMenus()
+	get_node("Mode Panel").visible = true
 	UpdateUI()
 
 func UpdateUI():
 	self.get_node("Mode Panel/Mode Select Button").text = modes[index]
+
+func DisableAllMenus():
+	get_node("Mode Panel").visible = false
+	get_node("Credits Panel").visible = false
+	get_node("Exit Panel").visible = false
 
 func _on_Left_button_up():
 	if (index - 1) < 0:
@@ -23,7 +30,8 @@ func _on_Right_button_up():
 
 func _on_Mode_Select_button_up():
 	if(modes[index] == "Exit"):
-		self.get_tree().quit()
+		DisableAllMenus()
+		get_node("Exit Panel").visible = true
 		return
 		
 	var scene = "res://Scene/" + modes[index] + ".tscn"
@@ -35,8 +43,14 @@ func _on_Info_button_up():
 	var credits = get_node("Credits Panel").visible
 	if(menu == credits):
 		printerr("Both of these panels should not be active at the same time!")
+		
 	
 	get_node("Mode Panel").visible = !menu
 	get_node("Credits Panel").visible = !credits
 
+func _on_Yes_Button_up():
+	self.get_tree().quit()
 
+func _on_No_Button_up():
+	DisableAllMenus()
+	get_node("Mode Panel").visible = true
