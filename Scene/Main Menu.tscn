@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/UI/chevron_left.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/Space Monkey.otf" type="DynamicFontData" id=6]
 [ext_resource path="res://Sprites/dg2.png" type="Texture" id=7]
-[ext_resource path="res://Fonts/AtomicAge-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Fonts/ReemKufiFun-VariableFont_wght.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0980392, 0.172549, 0.231373, 1 )
@@ -48,7 +48,7 @@ font_data = ExtResource( 2 )
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.996078, 1, 0, 0.0588235 )
 border_width_left = 3
 border_width_top = 3
@@ -62,9 +62,10 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [sub_resource type="DynamicFont" id=8]
-size = 25
+size = 20
 use_mipmaps = true
 use_filter = true
+extra_spacing_space = 1
 font_data = ExtResource( 8 )
 
 [node name="Control" type="Control"]
@@ -192,28 +193,27 @@ __meta__ = {
 
 [node name="Credits Panel" type="Panel" parent="."]
 visible = false
-anchor_left = 0.123
-anchor_top = 0.272
-anchor_right = 0.877
-anchor_bottom = 0.728
-margin_left = 0.184998
-margin_top = -0.340012
-margin_right = -0.185028
-margin_bottom = 0.339966
-custom_styles/panel = SubResource( 9 )
+anchor_left = 0.253
+anchor_top = 0.347
+anchor_right = 0.747
+anchor_bottom = 0.694
+margin_left = 0.0349884
+margin_top = 0.160004
+margin_right = -0.0350037
+margin_bottom = 0.320007
+custom_styles/panel = SubResource( 7 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Studio Title" type="Label" parent="Credits Panel"]
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-margin_top = -17.5
-margin_bottom = 17.5
+anchor_bottom = 1.0
 custom_fonts/font = SubResource( 8 )
-text = "credits:
-perpetual stewdios"
+text = "Credits
+Oyale Salami
+Perpetual Stewdios"
 align = 1
 valign = 1
 clip_text = true
