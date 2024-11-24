@@ -10,10 +10,10 @@ func _ready():
 func show_section(number):
 	var i = 0
 	while i < sections.size():
-		self.get_node("HSplitContainer/Panel/Sections").get_children()[i].hide()
+		get_node("Panel/Sections").get_children()[i].hide()
 		i += 1
-	self.get_node("HSplitContainer/Panel/Sections/" + String(number)).show()
-	self.get_node("HSplitContainer/Panel/Mode").text = sections[index]
+	get_node("Panel/Sections/" + String(number)).show()
+	get_node("Panel/Mode").text = sections[index]
 
 func _on_Mode_button_down():
 	var _scene = self.get_tree().change_scene("res://Main.tscn")
